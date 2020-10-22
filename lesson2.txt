@@ -1,0 +1,9 @@
+Питон
+
+"Hello World"
+
+"Hi"
+
+"I like Python"
+
+"Nice"
