@@ -28,6 +28,7 @@ class Handle(Stationery):
         super().draw(title)
         print(f"Класс 3 активирован : {self.title} < Процесс начат! \n")
 
+
 a1 = Pen()
 a1.draw("Ручка")
 
