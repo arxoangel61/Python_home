@@ -15,16 +15,25 @@
 my_dict = dict()
 
 f_obj = open("text_6.txt", 'r', encoding='utf-8')
-content = f_obj.readlines()
-for line in content:
-    splitted_line = line.split()
-    # print(splitted_line)
-    subject = splitted_line[0]
-    # print(subject)
-    sum_lesson = sum([int(x[:x.find('(')]) for x in splitted_line[1:] if '(' in x])
-    # print(sum_lesson)
-    my_dict[subject[:-1]] = sum_lesson
+# content = f_obj.readlines()
+# for line in content:
+#     splitted_line = line.split()
+#     # print(splitted_line)
+#     subject = splitted_line[0]
+#     # print(subject)
+#     sum_lesson = sum([int(x[:x.find('(')]) for x in splitted_line[1:] if '(' in x])
+#     # print(sum_lesson)
+#     my_dict[subject[:-1]] = sum_lesson
+#
+# print(my_dict)
+
+import re
+
+my_dict = {}
+with open("text_6.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        num = (int(num) for num in re.findall('(\d+)', line))
+        word = line.split()[0]
+        my_dict.update({word: sum(num)})
 
 print(my_dict)
-
-f_obj.close()
